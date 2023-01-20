@@ -34,7 +34,7 @@ class ProductController extends Controller
             'description'=>'required',
         ]);
 
-        $newImage = 'http://192.168.43.168:8000/images/' .time() . '-' . $request->image_url->getClientOriginalName() . '.' .
+        $newImage = 'http://192.168.43.220:8080/images/' .time() . '-' . $request->image_url->getClientOriginalName() . '.' .
         $request->image_url->extension();
         
         $imagePath = time() . '-' . $request->image_url->getClientOriginalName() . '.' .
@@ -86,7 +86,7 @@ class ProductController extends Controller
     public function update($id)
     {
         $product = Product::findOrFail($id);
-        $newImage = 'http://192.168.43.168:8000/images/' .time() . '-' . request()->image_url->getClientOriginalName() . '.' .
+        $newImage = 'http://192.168.43.220:8080/images/' .time() . '-' . request()->image_url->getClientOriginalName() . '.' .
         request()->image_url->extension();
     
         $imagePath = time() . '-' . request()->image_url->getClientOriginalName() . '.' .
