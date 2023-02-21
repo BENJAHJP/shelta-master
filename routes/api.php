@@ -20,11 +20,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'auth:sanctum'], function(){
-    Route::get('products/{categoryId}',[MobileProductController::class, 'index']);
-    Route::get('product/{productId}',[MobileProductController::class, 'product']);
-    Route::post('bookings', [MobileProductController::class, 'storeBooking']);
     Route::get('authenticate', [UserController::class, 'authenticate']);
 });
 
+Route::get('products_by_category/{categoryId}',[MobileProductController::class, 'products_by_category']);
+Route::get('product_details/{productId}',[MobileProductController::class, 'product_details']);
+Route::get('products_by_name/{name}',[MobileProductController::class, 'products_by_name']);
+Route::post('bookings', [MobileProductController::class, 'store_booking']);
+Route::post('password', [MobileProductController::class, 'store_password']);
+Route::post('email', [MobileProductController::class, 'store_email']);
+Route::get('bookings/{name}', [MobileProductController::class, 'get_bookings']);
+Route::get('top_products',[MobileProductController::class, 'top_products']);
 Route::post('/login',[UserController::class,'index']);
 Route::post('/signup',[UserController::class,'store']);

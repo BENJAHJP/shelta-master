@@ -59,8 +59,8 @@
                                 <tbody>
                                     @foreach ($bookings as $booking) 
                                         <tr>
-                                            <td>{{ $booking->booked_house }}</td>
                                             <td>{{ $booking->name }}</td>
+                                            <td>{{ $booking->booked_house }}</td>
                                             <td>{{ $booking->price }}</td>
                                             <td>{{ $booking->appointment_date }}</td>
                                             <td>{{ $booking->contact }}</td>

@@ -38,7 +38,7 @@ class BookingController extends Controller
 
     public function edit($id)
     {
-        $bookings = Booking::findOrFail($id);
+        $booking = Booking::findOrFail($id);
         return view('booking.edit', compact('booking'));
         
       
