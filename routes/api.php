@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 Route::get('products_by_category/{categoryId}',[MobileProductController::class, 'products_by_category']);
 Route::get('product_details/{productId}',[MobileProductController::class, 'product_details']);
 Route::get('products_by_name/{name}',[MobileProductController::class, 'products_by_name']);
-Route::get('search_product/{searchQuery}',[MobileProductController::class, 'search_product']);
+Route::post('search_product/{searchQuery}',[MobileProductController::class, 'search_product']);
 Route::post('bookings', [MobileProductController::class, 'store_booking']);
 Route::post('password', [MobileProductController::class, 'store_password']);
 Route::post('email', [MobileProductController::class, 'store_email']);

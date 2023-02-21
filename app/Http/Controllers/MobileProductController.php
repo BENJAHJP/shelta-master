@@ -25,7 +25,7 @@ class MobileProductController extends Controller{
         return Booking::where('name','LIKE',"%{$name}%",)->get();
     }
 
-    public function searchProduct($searchQuery){
+    public function search_product($searchQuery){
         return Product::where('name','LIKE',"%{$searchQuery}%",)->get();
     }
 
